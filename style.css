@@ -43,6 +43,7 @@ body {
   gap: 16px;
   padding-left: 32px;
   border-left: 1px solid #000;
+  text-align: center;
 }
 
 /* Stil for bilder */
