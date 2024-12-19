@@ -1,0 +1,117 @@
+/* Sentraliserer innholdet i midten av siden */
+body {
+  display: flex; /* Bruker Flexbox for å lage en fleksibel beholder */
+  justify-content: center; /* Sentraliserer innholdet horisontalt */
+  align-items: center; /* Sentraliserer innholdet vertikalt */
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* Inkluderer padding og border i elementets totale bredde og høyde */
+* {
+  box-sizing: border-box; /* Sikrer at padding og border inkluderes i elementets bredde og høyde-beregning */
+}
+
+/* Flex container med gap mellom elementene */
+.container {
+  display: flex; /* Skaper en fleksibel beholder for å holde elementer */
+  gap: 80px; /* Setter avstanden mellom elementene i fleksbeholderen */
+  align-items: end; /* Justerer elementene vertikalt til bunnen av beholderen */
+}
+
+/* Grid container med 3 kolonner og 2 rader */
+.image-container {
+  display: grid; /* Skaper en grid-beholder */
+  grid-template-columns: repeat(3, 1fr); /* Lager 3 like store kolonner */
+  grid-template-rows: repeat(2, 1fr); /* Lager 2 like store rader */
+  gap: 4px; /* Setter avstanden mellom grid-elementene */
+}
+
+/* Flex container med kolonne retning og gap */
+.user-section {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Flex container med kolonne retning, gap og venstre padding */
+.similar-products {
+  display: flex;
+  flex-direction: column; /* Stabler elementer vertikalt */
+  gap: 16px;
+  padding-left: 32px;
+  border-left: 1px solid #000;
+}
+
+/* Stil for bilder */
+img {
+  object-fit: contain; /* Sikrer at bildene er fullt synlige og opprettholder proporsjonene */
+  justify-self: start; /* Justerer bildet til venstre i beholderen */
+  align-self: center; /* Sentraliserer bildet vertikalt i beholderen */
+  border: 1px solid #000;
+  height: 200px;
+}
+
+/* Bildet tar opp to kolonner */
+.img-span {
+  grid-column: span 2; /* Tar opp to kolonner i grid */
+  width: 100%;
+}
+
+/* Bildet tar opp flere rader og kolonner */
+.img-similar {
+  height: 180px;
+  grid-row-start: 1; /* Starter i første rad av grid */
+  grid-row-end: 3; /* Slutter i tredje rad av grid */
+  grid-column-start: 1; /* Starter i første kolonne av grid */
+  grid-column-end: 3; /* Slutter i tredje kolonne av grid */
+}
+
+/* Brukerseksjon -> knappbeholder */
+.user-section > div:first-child > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Stil for knapper */
+button {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Accordion (produktbeskrivelse, produktdetaljer, anmeldelser...) */
+.user-section > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Stil for hver seksjon i accordion */
+.user-section > div:nth-child(2) > div {
+  display: flex;
+  justify-content: space-between; /* Fordeler plass mellom elementene */
+  border-bottom: 1px solid #000;
+  padding-bottom: 4px;
+}
+
+/* Container for lignende bilder */
+.img-similar__container {
+  position: relative; /* Gjør det mulig for elementer å ha absolutte posisjoner innen beholderen */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Lager 3 like store kolonner */
+  grid-template-rows: repeat(3, 1fr); /* Lager 3 like store rader */
+  height: 180px;
+  width: 145px;
+}
+
+/* Stil for SVG-ikoner */
+svg {
+  position: absolute; /* Gjør SVG-ikonet absolutt i forhold til sin container */
+  right: 8px; /* Setter høyre posisjon for ikonet */
+  top: 8px; /* Setter øvre posisjon for ikonet */
+}
